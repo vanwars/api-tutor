@@ -42,7 +42,8 @@
         	"url": "media-by-tag",
         	"name": "Media by Tag",
         	"data_type": "jsonp",
-        	"type": "list",
+        	"type": "api",
+        	"data_attribute": "data",
         	"template_path": "form-template.tpl",
 			"api_url": "https://api.instagram.com/v1/tags/mtshasta/media/recent",
 			"extras": {
