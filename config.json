@@ -1,0 +1,66 @@
+{
+    "pages": [
+    	{
+        	"template_path": "login.tpl",
+            "target": "#main",
+            "extras": {
+            	"auth_url": "https://instagram.com/oauth/authorize/",
+            	"client_id": "967d3b8bf18c43e2a9a85cac7ab095be",
+            	"redirect_url": "http://code510.org/summer2015/api-tutor/"
+        	}
+        }, 
+        {
+        	"template_path": "top-menu.tpl",
+            "target": "#main-nav"
+        }, 
+        {
+        	"url": "show-tester",
+            "template_path": "forms-template.tpl",
+            "target": "#main",
+            "type": "list",
+            "api_url": "api_config.json",
+            "data_attribute": "tabs",
+            "post_render": "activateTabs"
+        }, 
+        {
+        	"url": "instagram/login",
+        	"template_path": "login.tpl",
+            "target": "#main",
+            "extras": {
+            	"auth_url": "https://instagram.com/oauth/authorize/",
+            	"client_id": "967d3b8bf18c43e2a9a85cac7ab095be",
+            	"redirect_url": "http://code510.org/summer2015/api-tutor/"
+            }
+        }, 
+        {
+        	"url": "access_token=:token",
+        	"template_path": "login.tpl",
+            "target": "#main",
+            "type": "authenticate"
+        },
+    	{
+        	"url": "media-by-tag",
+        	"name": "Media by Tag",
+        	"data_type": "jsonp",
+        	"type": "list",
+        	"template_path": "form-template.tpl",
+			"api_url": "https://api.instagram.com/v1/tags/mtshasta/media/recent",
+			"extras": {
+				"templates": [{
+						"name": "photo hover template",
+						"path": "photo_hover.tpl"
+					}, {
+						"name": "polaroid template",
+						"path": "photos.tpl"
+					}],
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
+				"help_text": "Go to the SoundCloud API reference for more information."
+			},
+            "target": "#main"
+        }, {
+        	"url": "some-route",
+        	"template_path": "top-menu.tpl",
+            "target": "#main"
+        }
+    ]
+}
