@@ -12,18 +12,9 @@
         {
         	"template_path": "top-menu.tpl",
             "target": "#main-nav"
-        }, 
+        },
         {
-        	"url": "show-tester",
-            "template_path": "forms-template.tpl",
-            "target": "#main",
-            "type": "list",
-            "api_url": "api_config.json",
-            "data_attribute": "tabs",
-            "post_render": "activateTabs"
-        }, 
-        {
-        	"url": "instagram/login",
+        	"url": "login",
         	"template_path": "login.tpl",
             "target": "#main",
             "extras": {
@@ -38,29 +29,39 @@
             "target": "#main",
             "type": "authenticate"
         },
+        {
+        	"urls":  ["media-by-tag", "media-by-tag/:api_template_path"],
+            "template_path": "forms-template.tpl",
+            "target": "#tab-nav",
+            "type": "list",
+            "api_url": "api_config.json",
+            "data_attribute": "tabs"
+        },
     	{
-        	"url": "media-by-tag",
+        	"urls": ["media-by-tag", "media-by-tag/:api_template_path"],
         	"name": "Media by Tag",
         	"data_type": "jsonp",
         	"type": "api",
         	"data_attribute": "data",
         	"template_path": "form-template.tpl",
 			"api_url": "https://api.instagram.com/v1/tags/mtshasta/media/recent",
+			"templates": [
+				{
+					"name": "photo hover template",
+					"path": "photo_hover.tpl"
+				}, {
+					"name": "polaroid template",
+					"path": "photos.tpl"
+				}
+			],
 			"extras": {
-				"templates": [{
-						"name": "photo hover template",
-						"path": "photo_hover.tpl"
-					}, {
-						"name": "polaroid template",
-						"path": "photos.tpl"
-					}],
 				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
 				"help_text": "Go to the SoundCloud API reference for more information."
 			},
             "target": "#main"
         }, {
         	"url": "some-route",
-        	"template_path": "top-menu.tpl",
+        	"template_path": "dummy.tpl",
             "target": "#main"
         }
     ]
