@@ -30,16 +30,48 @@
             "type": "authenticate",
             "redirect_route": "media-by-tag"
         },
-        {
-        	"urls":  ["media-by-tag"],
-            "template_path": "forms-template.tpl",
-            "target": "#tab-nav",
-            "type": "list",
-            "api_url": "api_config.json",
-            "data_attribute": "tabs"
+    	{
+        	"url": "tag-search",
+        	"name": "Tag Search",
+        	"data_type": "jsonp",
+        	"type": "api",
+        	"data_attribute": "data",
+			"api_url": "https://api.instagram.com/v1/tags/search?q=nature",
+			"query_params": {
+				"count": 20
+			},
+			"templates": [{
+				"name": "tags template",
+				"path": "tags.tpl"
+			}],
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
+				"help_text": "Go to the SoundCloud API reference for more information."
+			},
+            "target": "#main"
         },
     	{
-        	"urls": ["media-by-tag", "media-by-tag/:template_path"],
+        	"url": "user-search",
+        	"name": "User Search",
+        	"data_type": "jsonp",
+        	"type": "api",
+        	"data_attribute": "data",
+			"api_url": "https://api.instagram.com/v1/users/search?q=lcmac9",
+			"query_params": {
+				"count": 20
+			},
+			"templates": [{
+				"name": "users template",
+				"path": "users.tpl"
+			}],
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
+				"help_text": "Go to the SoundCloud API reference for more information."
+			},
+            "target": "#main"
+        },
+    	{
+        	"url": "media-by-tag",
         	"name": "Media by Tag",
         	"data_type": "jsonp",
         	"type": "api",
@@ -49,7 +81,6 @@
 			"query_params": {
 				"count": 20
 			},
-			"post_render": "activateTabs",
 			"templates": [
 				{
 					"name": "photo hover template",
@@ -64,9 +95,29 @@
 				"help_text": "Go to the SoundCloud API reference for more information."
 			},
             "target": "#main"
-        }, {
-        	"url": "some-route",
-        	"template_path": "dummy.tpl",
+        },
+    	{
+        	"url": "media-by-user",
+        	"name": "Media by User",
+        	"data_type": "jsonp",
+        	"type": "api",
+        	"next_url": "pagination.next_url",
+        	"data_attribute": "data",
+			"api_url": "https://api.instagram.com/v1/users/1632506140/media/recent",
+			"query_params": {
+				"count": 20
+			},
+			"templates": [{
+				"name": "photo hover template",
+				"path": "photo_hover.tpl"
+			}, {
+				"name": "polaroid template",
+				"path": "photos.tpl"
+			}],
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
+				"help_text": "Go to the SoundCloud API reference for more information."
+			},
             "target": "#main"
         }
     ]

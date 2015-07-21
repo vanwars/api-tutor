@@ -1,12 +1,26 @@
-<form role="tabpanel" class="form-horizontal tab-pane fade in active" id="{{ slugify name }}">
+<ul class="nav nav-tabs" role="tablist">
+{{#tabs}}
+  	<li {{#ifEqual url ../active_route }}class="active"{{/ifEqual}}>
+  		<a href="#/{{ url }}">{{ name }}</a>
+  	</li>
+{{/tabs}}
+</ul>
+
+<form role="tabpanel" class="tab-content form-horizontal tab-pane fade in active" id="{{ slugify name }}">
   	<i class="fullscreen fa fa-expand pull-right"></i>
-  	<select name="status">
-  		<option value="json">JSON</option>
-  		{{#templates}}
-  		<option value="{{path}}">{{name}}</option>
-  		{{/templates}}
-  	</select>
+  	
   	<div class="form-group">
+  		<div class="row">
+	    	<label for="template-selection" class="col-sm-2 control-label">Select Template</label>
+	    	<div class="col-sm-7">
+	    		<select id="template-selection" name="status" class="form-control">
+			  		<option value="json">JSON</option>
+			  		{{#templates}}
+			  		<option value="{{path}}">{{name}}</option>
+			  		{{/templates}}
+			  	</select>
+	  		</div>
+	  	</div>
   		<div class="row">
 	    	<label for="tag-search" class="col-sm-2 control-label">{{ name }} URL</label>
 	    	<div class="col-sm-7">
