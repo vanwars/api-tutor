@@ -30,7 +30,7 @@
             "type": "authenticate"
         },
         {
-        	"urls":  ["media-by-tag", "media-by-tag/:api_template_path"],
+        	"urls":  ["media-by-tag"],
             "template_path": "forms-template.tpl",
             "target": "#tab-nav",
             "type": "list",
@@ -38,12 +38,12 @@
             "data_attribute": "tabs"
         },
     	{
-        	"urls": ["media-by-tag", "media-by-tag/:api_template_path"],
+        	"urls": ["media-by-tag", "media-by-tag/:template_path"],
         	"name": "Media by Tag",
         	"data_type": "jsonp",
         	"type": "api",
+        	"next_url": "pagination.next_url",
         	"data_attribute": "data",
-        	"template_path": "form-template.tpl",
 			"api_url": "https://api.instagram.com/v1/tags/mtshasta/media/recent",
 			"templates": [
 				{

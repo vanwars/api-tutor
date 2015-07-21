@@ -1,6 +1,3 @@
-.thumbnail { 
-    display: inline-block;
-}    
 .instagram-thumb {
 	height: 300px;
   	overflow-y: hidden;
@@ -13,4 +10,71 @@
   	margin-left: 10px;
 }
 
+.next-page {
+   	width: 30%;
+  	margin-right: auto;
+  	margin-left: auto;
+  	display: block;
+}
 
+.tag {
+  background: #FE5F55;
+  border-radius: 3px 0 0 3px;
+  color: #FFF;
+  font-size: 12px;
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 15px 0 10px;
+  position: relative;
+  margin: 0 5px 5px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 10px solid transparent;
+  border-left: 8px solid #FE5F55;
+  border-top: 10px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: crimson; 
+}
+
+.article-img img {
+    width: 100%;
+}
+.article-img {
+    display: inline-block;
+    margin: -2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 150px;
+}
+.article-overlay {
+    background-color: #000;
+    cursor: pointer;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    transition: 0.5s ease;
+    width: 100%;
+    -moz-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+}
+.article-overlay:hover {
+    opacity: 0;
+}
