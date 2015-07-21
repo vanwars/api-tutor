@@ -46,6 +46,10 @@
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/tags/mtshasta/media/recent",
+			"query_params": {
+				"count": 20
+			},
+			"post_render": "activateTabs",
 			"templates": [
 				{
 					"name": "photo hover template",

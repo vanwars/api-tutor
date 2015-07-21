@@ -389,3 +389,11 @@ h1 { margin-bottom: 20px; }
   display: block;
   margin-bottom: 15px;
 }
+
+.col-sm-2 label, .col-sm-2 a {
+	float: right;
+}
+.CodeMirror {
+	border: solid 1px #CCC;
+	border-radius: 4px;
+}

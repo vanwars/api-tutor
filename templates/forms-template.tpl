@@ -1,3 +1,9 @@
+{{ active_route }}
+<ul class="nav nav-tabs" role="tablist">
 {{#tabs}}
-  	<a href="#/{{ slugify name }}" role="tab" data-toggle="tab">{{ name }}</a><br>
+	{{#if slugify name == active_route }}
+	<li>HORRAY</li>
+	{{#if}}
+  	<li><a href="#/{{ slugify name }}">{{ name }} {{ ../active_route }}</a></li>
 {{/tabs}}
+</ul>
