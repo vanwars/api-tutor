@@ -1,3 +1,5 @@
+{{ paginator }}
+
 {{#data}}
 <div class="thumbnail instagram-thumb">
     {{#if videos }}

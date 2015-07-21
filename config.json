@@ -27,7 +27,8 @@
         	"url": "access_token=:token",
         	"template_path": "login.tpl",
             "target": "#main",
-            "type": "authenticate"
+            "type": "authenticate",
+            "redirect_route": "media-by-tag"
         },
         {
         	"urls":  ["media-by-tag"],

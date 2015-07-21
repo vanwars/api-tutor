@@ -12,7 +12,7 @@
     		<input type="text" class="form-control" value="{{ api_url }}">
   		</div>
   		<div class="col-sm-2">
-  			<button class="btn btn-primary">Search</button>
+  			<button class="btn btn-primary search">Search</button>
   		</div>
   		<div class="col-sm-9">
   			<p> 
