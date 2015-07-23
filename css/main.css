@@ -301,11 +301,6 @@ main {
   }
 }
 
-
-#edit-template, #edit-style {
-    width: 100%;
-    height: 200px;
-}
 .fa-white {
 	color: #000;
 	line-height: 60px;
@@ -379,9 +374,6 @@ h1 { margin-bottom: 20px; }
   color: #999;
 }
 
-/*.display-results {
-	max-width: 900px;
-}*/
 .pager-container {
   width: 30%;
   margin-right: auto;
@@ -396,4 +388,17 @@ h1 { margin-bottom: 20px; }
 .CodeMirror {
 	border: solid 1px #CCC;
 	border-radius: 4px;
+}
+#edit-template, #edit-style {
+	padding: 20px 0px 0px 0px;
+    width: 100%;
+    height: 200px;
+}
+#edit-template .tab-content, #edit-style .tab-content {
+	min-height: 200px;
+	padding: 5px;
+}
+#edit-template .CodeMirror {
+	border: none;
+	border-radius: 0px;
 }
