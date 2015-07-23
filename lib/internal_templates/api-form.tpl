@@ -34,11 +34,11 @@
 	  		<div class="col-sm-2">
 		  		<label for="tag-query_params" class="control-label">Query Parameters</label>
 		  		<br>
-		  		<a href="{{ reference_url }}" target="_blank">more info...</a>
+		  		<a href="{{ extras.reference_url }}" target="_blank">more info...</a>
 		  	</div>
 	  		<div class="col-sm-7">
 	    		<textarea id="query_params">{{api_params}}</textarea>
-	    		
+	    		<p>{{ extras.help_text }}</p>
 	  		</div>
 	  	</div>
   	</div>

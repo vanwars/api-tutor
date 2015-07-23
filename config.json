@@ -14,6 +14,10 @@
             "target": "#main-nav"
         },
         {
+        	"type": "template-editor",
+        	"target": "#edit-template"
+        },
+        {
         	"url": "login",
         	"template_path": "login.tpl",
             "target": "#main",
@@ -45,8 +49,8 @@
 				"path": "tags.tpl"
 			}],
 			"extras": {
-				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
-				"help_text": "Go to the SoundCloud API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/tags/#get_tags_search",
+				"help_text": "Go to the Instagram API reference for more information."
 			},
             "target": "#main"
         },
@@ -65,8 +69,8 @@
 				"path": "users.tpl"
 			}],
 			"extras": {
-				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
-				"help_text": "Go to the SoundCloud API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_search",
+				"help_text": "Go to the Instagram API reference for more information."
 			},
             "target": "#main"
         },
@@ -88,11 +92,14 @@
 				}, {
 					"name": "polaroid template",
 					"path": "photos.tpl"
+				}, {
+					"name": "location template",
+					"path": "image-locations.tpl"
 				}
 			],
 			"extras": {
-				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
-				"help_text": "Go to the SoundCloud API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/tags/#get_tags_media_recent",
+				"help_text": "Go to the Instagram API reference for more information."
 			},
             "target": "#main"
         },
@@ -108,15 +115,47 @@
 				"count": 20
 			},
 			"templates": [{
-				"name": "photo hover template",
-				"path": "photo_hover.tpl"
-			}, {
-				"name": "polaroid template",
-				"path": "photos.tpl"
-			}],
+					"name": "photo hover template",
+					"path": "photo_hover.tpl"
+				}, {
+					"name": "polaroid template",
+					"path": "photos.tpl"
+				}, {
+						"name": "location template",
+						"path": "image-locations.tpl"
+				}
+			],
 			"extras": {
-				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users",
-				"help_text": "Go to the SoundCloud API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_media_recent",
+				"help_text": "Go to the Instagram API reference for more information."
+			},
+            "target": "#main"
+        },
+    	{
+        	"url": "stuff-you-like",
+        	"name": "Stuff You Like",
+        	"data_type": "jsonp",
+        	"type": "api",
+        	"next_url": "pagination.next_url",
+        	"data_attribute": "data",
+			"api_url": "https://api.instagram.com/v1/users/self/media/liked",
+			"query_params": {
+				"count": 20
+			},
+			"templates": [{
+					"name": "photo hover template",
+					"path": "photo_hover.tpl"
+				}, {
+					"name": "polaroid template",
+					"path": "photos.tpl"
+				}, {
+					"name": "location template",
+					"path": "image-locations.tpl"
+				}
+			],
+			"extras": {
+				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_feed_liked",
+				"help_text": "Go to the Instagram API reference for more information."
 			},
             "target": "#main"
         }
