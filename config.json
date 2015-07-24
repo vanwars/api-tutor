@@ -28,6 +28,11 @@
             }
         }, 
         {
+        	"url": "logout",
+            "redirect_route": "login",
+            "type": "authenticate"
+        }, 
+        {
         	"url": "access_token=:token",
         	"template_path": "login.tpl",
             "target": "#main",
@@ -60,7 +65,7 @@
         	"data_type": "jsonp",
         	"type": "api",
         	"data_attribute": "data",
-			"api_url": "https://api.instagram.com/v1/users/search?q=lcmac9",
+			"api_url": "https://api.instagram.com/v1/users/search?q=barackobama",
 			"query_params": {
 				"count": 20
 			},
@@ -110,7 +115,7 @@
         	"type": "api",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
-			"api_url": "https://api.instagram.com/v1/users/1632506140/media/recent",
+			"api_url": "https://api.instagram.com/v1/users/10206720/media/recent",
 			"query_params": {
 				"count": 20
 			},

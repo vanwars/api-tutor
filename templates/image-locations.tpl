@@ -1,6 +1,10 @@
 <!-- Pagination -->
 {{ paginator }}
 
+<p>
+  Learn more about the Google Static Map API
+  <a href="https://developers.google.com/maps/documentation/staticmaps/intro" target="_blank">here</a>.
+</p>
 {{#data}}
    {{#if location }}
 	<img class="thumbnail" 

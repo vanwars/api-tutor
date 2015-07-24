@@ -270,8 +270,8 @@ header {
 #cd-cart .update-template {
   display: block;
   width: 100%;
-  height: 60px;
-  line-height: 60px;
+  height: 40px;
+  line-height: 40px;
   background: #7dcf85;
   color: #FFF;
   text-align: center;
@@ -286,8 +286,6 @@ header {
 #cd-cart .cd-go-to-cart a {
   text-decoration: underline;
 }
-
-
 
 main {
   position: relative;
@@ -343,7 +341,7 @@ h1 { margin-bottom: 20px; }
 }
 
 .tab-content {
-	padding: 30px;
+	padding: 10px 30px 10px 30px;
 }
 
 *:-webkit-full-screen {
@@ -369,7 +367,6 @@ h1 { margin-bottom: 20px; }
 }
 
 .fa-expand {
-  margin-top: -20px;
   margin-right: -20px;
   color: #999;
 }
@@ -382,19 +379,21 @@ h1 { margin-bottom: 20px; }
   margin-bottom: 15px;
 }
 
-.col-sm-2 label, .col-sm-2 a {
+.col-sm-2 label, .col-sm-1 label, .col-sm-2 a {
 	float: right;
+	line-height: 30px;
 }
 .CodeMirror {
 	border: solid 1px #CCC;
 	border-radius: 4px;
+	font-size: 12px;
 }
 
 select.form-control {
 	background-color: #eee; /*rgba(179, 239, 178, 0.3); e8f2ff*/
 }
 #edit-template, #edit-style {
-	padding: 20px 0px 0px 0px;
+	padding: 10px 0px 0px 0px;
     width: 100%;
     height: 200px;
 }
@@ -405,4 +404,7 @@ select.form-control {
 #edit-template .CodeMirror {
 	border: none;
 	border-radius: 0px;
+}
+.form-group {
+	margin-bottom: 0px;
 }
