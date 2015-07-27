@@ -5,8 +5,8 @@
             "target": "#main",
             "extras": {
             	"auth_url": "https://instagram.com/oauth/authorize/",
-            	"client_id": "967d3b8bf18c43e2a9a85cac7ab095be",
-            	"redirect_url": "http://code510.org/summer2015/api-tutor/"
+            	"client_id": "9d572179430942d595770e36d6a8ca60",
+            	"redirect_url": "http://apitutor.org"
         	}
         }, 
         {
@@ -23,8 +23,8 @@
             "target": "#main",
             "extras": {
             	"auth_url": "https://instagram.com/oauth/authorize/",
-            	"client_id": "967d3b8bf18c43e2a9a85cac7ab095be",
-            	"redirect_url": "http://code510.org/summer2015/api-tutor/"
+            	"client_id": "9d572179430942d595770e36d6a8ca60",
+            	"redirect_url": "http://apitutor.org"
             }
         }, 
         {
@@ -92,11 +92,11 @@
 			},
 			"templates": [
 				{
-					"name": "photo hover template",
-					"path": "photo_hover.tpl"
-				}, {
 					"name": "polaroid template",
 					"path": "photos.tpl"
+				},{
+					"name": "photo hover template",
+					"path": "photo_hover.tpl"
 				}, {
 					"name": "location template",
 					"path": "image-locations.tpl"
@@ -120,14 +120,14 @@
 				"count": 20
 			},
 			"templates": [{
-					"name": "photo hover template",
-					"path": "photo_hover.tpl"
-				}, {
 					"name": "polaroid template",
 					"path": "photos.tpl"
 				}, {
-						"name": "location template",
-						"path": "image-locations.tpl"
+					"name": "photo hover template",
+					"path": "photo_hover.tpl"
+				}, {
+					"name": "location template",
+					"path": "image-locations.tpl"
 				}
 			],
 			"extras": {
@@ -148,11 +148,11 @@
 				"count": 20
 			},
 			"templates": [{
-					"name": "photo hover template",
-					"path": "photo_hover.tpl"
-				}, {
 					"name": "polaroid template",
 					"path": "photos.tpl"
+				}, {
+					"name": "photo hover template",
+					"path": "photo_hover.tpl"
 				}, {
 					"name": "location template",
 					"path": "image-locations.tpl"
