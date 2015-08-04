@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs" role="tablist">
 {{#tabs}}
   	<li {{#ifEqual url ../active_route }}class="active"{{/ifEqual}}>
-  		<a href="#/{{ url }}">{{ name }}</a>
+  		<a href="#/{{ urls.[0] }}">{{ name }}</a>
   	</li>
 {{/tabs}}
 </ul>
@@ -34,11 +34,14 @@
 	  		<div class="col-sm-2">
 		  		<label for="tag-query_params" class="control-label">Query Parameters</label>
 		  		<br>
-		  		<a href="{{ extras.reference_url }}" target="_blank">more info...</a>
+		  		
 		  	</div>
 	  		<div class="col-sm-7">
 	    		<textarea id="query_params">{{api_params}}</textarea>
-	    		<p>{{ extras.help_text }}</p>
+	    		<p class="help-block">
+	    			Consult the <a href="{{ extras.reference_url }}" 
+	    				target="_blank">API provider documentation</a> for more information.
+    			</p>
 	  		</div>
 	  	</div>
   	</div>

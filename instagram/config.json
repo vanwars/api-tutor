@@ -8,17 +8,6 @@
 	},
 	"homeURL": "your-feed",
     "pages": [
-    	{
-        	"template_path": "login.tpl",
-            "target": "#main",
-            "redirect_route": "media-by-tag",
-            "type": "login",
-            "extras": {
-            	"auth_url": "https://instagram.com/oauth/authorize/",
-            	"client_id": "beca1ae92f3d41aebf31830a19df35d5",
-            	"redirect_url": "http://apitutor.org"
-        	}
-        }, 
         {
         	"template_path": "top-menu.tpl",
             "target": "#main-nav"
@@ -27,34 +16,43 @@
         	"type": "template-editor",
         	"target": "#edit-template"
         },
+    	{
+        	"name": "Your Feed",
+        	"type": "api",
+            "provider": "instagram",
+        	"next_url": "pagination.next_url",
+        	"data_attribute": "data",
+			"api_url": "https://api.instagram.com/v1/users/self/feed",
+			"query_params": {
+				"count": 20
+			},
+			"templates": ["polaroid", "photo_hover", "location"],
+			"extras": {
+				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_feed_liked"
+			},
+            "target": "#main"
+        },
         {
         	"url": "login",
         	"template_path": "login.tpl",
-        	"type": "login",
+        	"type": "authentication",
             "target": "#main",
             "redirect_route": "media-by-tag",
-            "extras": {
-            	"auth_url": "https://instagram.com/oauth/authorize/",
-            	"client_id": "beca1ae92f3d41aebf31830a19df35d5",
-            	"redirect_url": "http://apitutor.org"
-            }
+            "action": "login",
+            "provider": "instagram"
         }, 
         {
         	"url": "logout",
             "redirect_route": "login",
-            "type": "authenticate"
+            "type": "authentication",
+            "action": "logout",
+            "provider": "instagram"
         }, 
-        {
-        	"url": "access_token=:token",
-        	"template_path": "login.tpl",
-            "target": "#main",
-            "type": "authenticate",
-            "redirect_route": "media-by-tag"
-        },
     	{
         	"url": "tag-search",
         	"name": "Tag Search",
-        	"type": "instagram",
+        	"type": "api",
+            "provider": "instagram",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/tags/search?q=nature",
 			"query_params": {
@@ -70,7 +68,8 @@
     	{
         	"url": "user-search",
         	"name": "User Search",
-        	"type": "instagram",
+        	"type": "api",
+            "provider": "instagram",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/users/search?q=barackobama",
 			"query_params": {
@@ -78,15 +77,15 @@
 			},
 			"templates": ["users1"],
 			"extras": {
-				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_search",
-				"help_text": "Go to the Instagram API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_search"
 			},
             "target": "#main"
         },
     	{
         	"url": "media-by-tag",
         	"name": "Media by Tag",
-        	"type": "instagram",
+        	"type": "api",
+            "provider": "instagram",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/tags/mtshasta/media/recent",
@@ -95,15 +94,15 @@
 			},
 			"templates": ["polaroid", "photo_hover", "location"],
 			"extras": {
-				"reference_url": "https://instagram.com/developer/endpoints/tags/#get_tags_media_recent",
-				"help_text": "Go to the Instagram API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/tags/#get_tags_media_recent"
 			},
             "target": "#main"
         },
     	{
         	"url": "media-by-user",
         	"name": "Media by User",
-        	"type": "instagram",
+        	"type": "api",
+            "provider": "instagram",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/users/10206720/media/recent",
@@ -112,15 +111,15 @@
 			},
 			"templates": ["polaroid", "photo_hover", "location"],
 			"extras": {
-				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_media_recent",
-				"help_text": "Go to the Instagram API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_media_recent"
 			},
             "target": "#main"
         },
     	{
         	"url": "stuff-you-like",
         	"name": "Stuff You Like",
-        	"type": "instagram",
+        	"type": "api",
+            "provider": "instagram",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/users/self/media/liked",
@@ -129,15 +128,15 @@
 			},
 			"templates": ["polaroid", "photo_hover", "location"],
 			"extras": {
-				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_feed_liked",
-				"help_text": "Go to the Instagram API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_feed_liked"
 			},
             "target": "#main"
         },
     	{
         	"url": "your-feed",
         	"name": "Your Feed",
-        	"type": "instagram",
+        	"type": "api",
+            "provider": "instagram",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/users/self/feed",
@@ -146,8 +145,7 @@
 			},
 			"templates": ["polaroid", "photo_hover", "location"],
 			"extras": {
-				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_feed_liked",
-				"help_text": "Go to the Instagram API reference for more information."
+				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_feed_liked"
 			},
             "target": "#main"
         }
