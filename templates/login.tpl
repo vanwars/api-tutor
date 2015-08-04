@@ -1,5 +1,5 @@
 <!-- Authentication with third party -->
-<form id="token-form" action="{{ auth_url }}" method="GET">
+<!-- form id="token-form" action="{{ auth_url }}" method="GET">
   	<div class="form-group">
 
     	<div class="col-sm-1">
@@ -16,4 +16,6 @@
   	</div>
   	<input type="hidden" name="response_type" value="token">
 	<input type="hidden" id="redirect_uri" name="redirect_uri" value="{{redirect_url}}">
-</form>
+</form -->
+
+<button service="instagram" title="Sign in to Instagram" class="btn zocial icon instagram">Instagram</button>

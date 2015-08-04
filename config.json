@@ -6,13 +6,16 @@
 		"photo_hover": { "display_name": "photo hover template", "path": "photo_hover.tpl" }, 
 		"location": { "display_name": "location template", "path": "image-locations.tpl" }
 	},
+	"homeURL": "your-feed",
     "pages": [
     	{
         	"template_path": "login.tpl",
             "target": "#main",
+            "redirect_route": "media-by-tag",
+            "type": "login",
             "extras": {
             	"auth_url": "https://instagram.com/oauth/authorize/",
-            	"client_id": "9d572179430942d595770e36d6a8ca60",
+            	"client_id": "beca1ae92f3d41aebf31830a19df35d5",
             	"redirect_url": "http://apitutor.org"
         	}
         }, 
@@ -27,10 +30,12 @@
         {
         	"url": "login",
         	"template_path": "login.tpl",
+        	"type": "login",
             "target": "#main",
+            "redirect_route": "media-by-tag",
             "extras": {
             	"auth_url": "https://instagram.com/oauth/authorize/",
-            	"client_id": "9d572179430942d595770e36d6a8ca60",
+            	"client_id": "beca1ae92f3d41aebf31830a19df35d5",
             	"redirect_url": "http://apitutor.org"
             }
         }, 
@@ -49,8 +54,7 @@
     	{
         	"url": "tag-search",
         	"name": "Tag Search",
-        	"data_type": "jsonp",
-        	"type": "api",
+        	"type": "instagram",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/tags/search?q=nature",
 			"query_params": {
@@ -66,8 +70,7 @@
     	{
         	"url": "user-search",
         	"name": "User Search",
-        	"data_type": "jsonp",
-        	"type": "api",
+        	"type": "instagram",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/users/search?q=barackobama",
 			"query_params": {
@@ -83,8 +86,7 @@
     	{
         	"url": "media-by-tag",
         	"name": "Media by Tag",
-        	"data_type": "jsonp",
-        	"type": "api",
+        	"type": "instagram",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/tags/mtshasta/media/recent",
@@ -101,8 +103,7 @@
     	{
         	"url": "media-by-user",
         	"name": "Media by User",
-        	"data_type": "jsonp",
-        	"type": "api",
+        	"type": "instagram",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/users/10206720/media/recent",
@@ -119,8 +120,7 @@
     	{
         	"url": "stuff-you-like",
         	"name": "Stuff You Like",
-        	"data_type": "jsonp",
-        	"type": "api",
+        	"type": "instagram",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/users/self/media/liked",
@@ -137,8 +137,7 @@
     	{
         	"url": "your-feed",
         	"name": "Your Feed",
-        	"data_type": "jsonp",
-        	"type": "api",
+        	"type": "instagram",
         	"next_url": "pagination.next_url",
         	"data_attribute": "data",
 			"api_url": "https://api.instagram.com/v1/users/self/feed",
