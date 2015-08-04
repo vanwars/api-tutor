@@ -15,9 +15,9 @@
 	    	<div class="col-sm-7">
 	    		<select id="template-selection" name="status" class="form-control">
 			  		<option value="json">JSON</option>
-			  		{{#templates}}
-			  		<option value="{{path}}">{{name}}</option>
-			  		{{/templates}}
+			  		{{#each templates}}
+			  		<option value="{{path}}">{{display_name}}</option>
+			  		{{/each}}
 			  	</select>
 	  		</div>
 	  	</div>
