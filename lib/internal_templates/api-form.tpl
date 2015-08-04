@@ -9,7 +9,7 @@
 <form role="tabpanel" class="tab-content form-horizontal tab-pane fade in active" id="{{ slugify name }}">
   	<i class="fullscreen fa fa-expand pull-right"></i>
   	
-  	<div class="form-group">
+  	<div class="form-group form-group-sm">
   		<div class="row">
 	    	<label for="template-selection" class="col-sm-2 control-label">Select Template</label>
 	    	<div class="col-sm-7">
@@ -27,7 +27,7 @@
 	    		<input type="text" class="form-control" value="{{ api_url }}">
 	  		</div>
 	  		<div class="col-sm-2">
-	  			<button class="btn btn-primary search">Search</button>
+	  			<button class="btn btn-primary search btn-sm">Search</button>
 	  		</div>
 	  	</div>
 	  	<div class="row">

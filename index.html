@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-
-	<!-- codemirror styles -->
-	<link rel="stylesheet" href="lib/external/codemirror/lib/codemirror.css">
-    <link rel="stylesheet" href="lib/external/codemirror/theme/api-tester.css">
-    <link rel="stylesheet" href="lib/external/codemirror/theme/neat.css">
-    <link rel="stylesheet" href="lib/external/codemirror/addon/fold/foldgutter.css">
-    <link rel="stylesheet" href="lib/external/codemirror/addon/hint/show-hint.css">
     
     <style id="custom-styles"></style>
 </head>
@@ -31,7 +24,11 @@
 
 	<main class="container-fluid">
 		<!-- Main Content -->
-	    <div id="main"></div>
+	    <div id="main">
+	    	<ul>
+	    		<li><a href="/instagram/">Instagram Tester</a></li>
+	    	</ul>
+	    </div>
 	</main>
 	
 	<!-- Side Panel -->
@@ -42,18 +39,5 @@
 
 
 <script src="lib/external/modernizr.js"></script>
-<script src="lib/functions.js"></script>
-<script src="lib/external/require.js"></script>
-<script src="lib/require-config.js" type="text/javascript"></script>
-<script>
-    require(["init"], function(App) {
-            App.start();
-        }
-    );
-</script>
-<!-- api & ui code -->
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code510.org/summer2015/api-tester/lib/js/main.js"></script>
-
 </body>
 </html>

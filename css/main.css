@@ -324,7 +324,7 @@ main {
 h1 { margin-bottom: 20px; }
 .tab-content { padding-top: 15px;}
 #token-form, #api-tester { display: block; }
-.col-sm-2, .col-sm-7 { 	padding: 5px; }
+.col-sm-2, .col-sm-7 { 	padding: 2px 5px; }
 .btn-default { background-color: #EEE; }
 .btn-default.active { background-color: #5cb85c; color: #FFF; }
 .tab-content {
