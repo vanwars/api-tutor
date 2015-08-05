@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs" role="tablist">
 {{#tabs}}
-  	<li {{#ifEqual url ../active_route }}class="active"{{/ifEqual}}>
+  	<li {{#each urls}} {{#ifEqual this ../../active_route }}class="active"{{/ifEqual}} {{/each}}>
   		<a href="#/{{ urls.[0] }}">{{ name }}</a>
   	</li>
 {{/tabs}}

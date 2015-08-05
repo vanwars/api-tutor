@@ -1,4 +1,7 @@
 {
+	"api_keys": {
+		"instagram": "beca1ae92f3d41aebf31830a19df35d5" 
+	},
 	"templates": {
 		"tags1": { "display_name": "tags template", "path": "tags.tpl" },
 		"users1": { "display_name": "users template", "path": "users.tpl" },
@@ -15,22 +18,6 @@
         {
         	"type": "template-editor",
         	"target": "#edit-template"
-        },
-    	{
-        	"name": "Your Feed",
-        	"type": "api",
-            "provider": "instagram",
-        	"next_url": "pagination.next_url",
-        	"data_attribute": "data",
-			"api_url": "https://api.instagram.com/v1/users/self/feed",
-			"query_params": {
-				"count": 20
-			},
-			"templates": ["polaroid", "photo_hover", "location"],
-			"extras": {
-				"reference_url": "https://instagram.com/developer/endpoints/users/#get_users_feed_liked"
-			},
-            "target": "#main"
         },
         {
         	"url": "login",
@@ -133,7 +120,7 @@
             "target": "#main"
         },
     	{
-        	"url": "your-feed",
+        	"urls": ["your-feed", ""],
         	"name": "Your Feed",
         	"type": "api",
             "provider": "instagram",
