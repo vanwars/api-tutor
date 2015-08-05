@@ -1,6 +1,6 @@
 <h2>{{ description}}</h2>
 <div class="row" style="padding:10px;">
-{{#tracks}}
+{{#each tracks}}
 	<div class="thumbnail track-thumb">
 	{{#if artwork_url }}
 		<img class="thumbnail" src="{{ artwork_url }}" />
@@ -9,7 +9,7 @@
 	{{/if}}
 	{{#if stream_url}}
 		<audio controls>
-		  	<source src="{{ append_client_id_to_url stream_url }}" type="audio/mpeg">
+		  	<source src="{{ stream_url }}?client_id={{../../client_id}}" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
 		<p>
@@ -18,5 +18,5 @@
 		</p>
 	{{/if}}
 	</div>
-{{/tracks}}
+{{/each}}
 </div>

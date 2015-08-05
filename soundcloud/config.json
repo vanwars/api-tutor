@@ -3,7 +3,10 @@
 		"soundcloud": "87cbda6ee084418612154fff3c0d5c11" 
 	},
 	"templates": {
-		"tracks": { "display_name": "tracks", "path": "tracks.tpl" }
+		"tracks": { "display_name": "tracks", "path": "tracks.tpl" },
+		"users": { "display_name": "users", "path": "users.tpl" },
+		"playlist": { "display_name": "playlist", "path": "playlist.tpl" },
+		"profile": { "display_name": "profile", "path": "profile.tpl" }
 	},
 	"homeURL": "",
     "pages": [
@@ -32,20 +35,64 @@
             "provider": "soundcloud"
         }, 
     	{
-        	"urls": ["stream-search", ""],
-        	"name": "Stream Search",
+        	"urls": ["track-search", ""],
+        	"name": "Track Search",
         	"type": "api",
         	"data_attribute": "data",
             "provider": "soundcloud",
-			"api_url": "https://api.soundcloud.com/tracks?limit=5&q=duranduran",
-			"query_params": [{ 
-				"name": "q",
-				"type": "text",
-				"help_text": "query parameter for keyword filter"
-			}],
+			"api_url": "https://api.soundcloud.com/tracks",
+			"query_params": { 
+				"q": "depeche mode",
+				"limit": 5
+			},
 			"templates": ["tracks"],
 			"extras": {
 				"reference_url": "https://developers.soundcloud.com/docs/api/reference#tracks"
+			},
+            "target": "#main"
+        }, 
+    	{
+        	"url": "user-search",
+        	"name": "User Search",
+        	"type": "api",
+        	"data_attribute": "data",
+            "provider": "soundcloud",
+			"api_url": "https://api.soundcloud.com/users",
+			"query_params": { 
+				"q": "duranduran",
+				"limit": 25
+			},
+			"templates": ["users"],
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#users"
+			},
+            "target": "#main"
+        },
+        {
+        	"url": "playlist",
+        	"name": "Playlist",
+        	"type": "api",
+        	"data_attribute": "tracks",
+            "provider": "soundcloud",
+			"api_url": "https://api.soundcloud.com/playlists/405726",
+			"query_params": { 
+				"limit": 5
+			},
+			"templates": ["playlist"],
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#playlists"
+			},
+            "target": "#main"
+        },
+        {
+        	"url": "profile",
+        	"name": "My Profile",
+        	"type": "api",
+            "provider": "soundcloud",
+			"api_url": "https://api.soundcloud.com/me",
+			"templates": ["profile"],
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#me"
 			},
             "target": "#main"
         }
