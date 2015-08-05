@@ -408,3 +408,20 @@ select.form-control {
 .form-group {
 	margin-bottom: 0px;
 }
+
+.btn-lg {
+	display: block;
+	margin: 100px auto 20px auto;
+}
+
+.disclaimer {
+    max-width: 600px;
+    display: block;
+	margin: auto;
+}
+.disclaimer > p {
+    color: #666;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}

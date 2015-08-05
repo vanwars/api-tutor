@@ -1,0 +1,66 @@
+{
+	"api_keys": {
+		"twitter": "DPSHSuk6A4XrvMu4YBmaTph4p" 
+	},
+	"templates": {
+		"tweets": { "display_name": "tweets", "path": "tweets.tpl" },
+		"statuses": { "display_name": "tweets", "path": "statuses.tpl" }
+	},
+	"homeURL": "",
+    "pages": [
+        {
+        	"template_path": "top-menu.tpl",
+            "target": "#main-nav"
+        },
+        {
+        	"type": "template-editor",
+        	"target": "#edit-template"
+        },
+        {
+        	"url": "login",
+        	"template_path": "login.tpl",
+        	"type": "authentication",
+            "target": "#main",
+            "redirect_route": "",
+            "action": "login",
+            "provider": "twitter"
+        }, 
+        {
+        	"url": "logout",
+            "redirect_route": "login",
+            "type": "authentication",
+            "action": "logout",
+            "provider": "twitter"
+        }, 
+    	{
+        	"urls": ["timeline", ""],
+        	"name": "User Timeline",
+        	"type": "api",
+        	"data_attribute": "data",
+            "provider": "twitter",
+			"api_url": "https://api.twitter.com/1.1/statuses/user_timeline.json",
+			"templates": ["tweets"],
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#tracks"
+			},
+            "target": "#main"
+        }, 
+    	{
+        	"url": "tweets-by-tag",
+        	"name": "Tweets by Tag",
+        	"type": "api",
+        	"data_attribute": "statuses",
+            "provider": "twitter",
+			"api_url": "https://api.twitter.com/1.1/search/tweets.json",
+			"templates": ["statuses"],
+			"query_params": { 
+				"q": "#puppies",
+				"result_type": "recent"
+			},
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#tracks"
+			},
+            "target": "#main"
+        }
+    ]
+}

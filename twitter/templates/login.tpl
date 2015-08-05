@@ -1,6 +1,6 @@
-<button title="Sign into SoundCloud" class="btn btn-lg btn-success">
-	<i class="fa fa-soundcloud fa-2x" style="vertical-align:sub;"></i>
-	Sign into SoundCloud
+<button title="Sign into Twitter" class="btn btn-lg btn-info">
+	<i class="fa fa-twitter fa-2x" style="vertical-align:sub;"></i>
+	Sign into Twitter
 </button>
 <div class="disclaimer">
   	<p>
