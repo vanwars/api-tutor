@@ -1,0 +1,53 @@
+{
+	"api_keys": {
+		"soundcloud": "87cbda6ee084418612154fff3c0d5c11" 
+	},
+	"templates": {
+		"tracks": { "display_name": "tracks", "path": "tracks.tpl" }
+	},
+	"homeURL": "",
+    "pages": [
+        {
+        	"template_path": "top-menu.tpl",
+            "target": "#main-nav"
+        },
+        {
+        	"type": "template-editor",
+        	"target": "#edit-template"
+        },
+        {
+        	"url": "login",
+        	"template_path": "login.tpl",
+        	"type": "authentication",
+            "target": "#main",
+            "redirect_route": "",
+            "action": "login",
+            "provider": "soundcloud"
+        }, 
+        {
+        	"url": "logout",
+            "redirect_route": "login",
+            "type": "authentication",
+            "action": "logout",
+            "provider": "soundcloud"
+        }, 
+    	{
+        	"urls": ["stream-search", ""],
+        	"name": "Stream Search",
+        	"type": "api",
+        	"data_attribute": "data",
+            "provider": "soundcloud",
+			"api_url": "https://api.soundcloud.com/tracks?limit=5&q=duranduran",
+			"query_params": [{ 
+				"name": "q",
+				"type": "text",
+				"help_text": "query parameter for keyword filter"
+			}],
+			"templates": ["tracks"],
+			"extras": {
+				"reference_url": "https://developers.soundcloud.com/docs/api/reference#tracks"
+			},
+            "target": "#main"
+        }
+    ]
+}
