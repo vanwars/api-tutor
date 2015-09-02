@@ -1,6 +1,6 @@
 The API Tutor
 ==========
-This project is just beginning, but it's goal is to help novices to understand how publicly available APIs work, and how newcomers to web programming can easily leverage APIs in their own projects. A current working version is hosted at [http://apitutor.org](http://apitutor.org/), which supports connections and interactions with select endpoints associated with the Instagram, Twitter, and Soundcloud APIs. Ideally, each new API Tutor page can be authored with a simple configuration file, such as (this one)[https://github.com/vanwars/api-tutor/blob/master/soundcloud/config.json]. We are tryind to make these config files as easy as possible to specify and configure.
+This project is just beginning, but its goal is to help novices to understand: (1) how publicly available APIs work, and (2) how they can be leveraged in apps and websites. A current working version of this code is hosted at [http://apitutor.org](http://apitutor.org/). As it currently stands, the tutor has some sample functionality for select endpoints (corresponding to the Instagram, Twitter, and Soundcloud APIs). Ideally, each new API Tutor page can be authored with a simple configuration file, such as (this one)[https://github.com/vanwars/api-tutor/blob/master/soundcloud/config.json]. We are trying to make these config files as easy as possible to configure.
 
 Brainstorm of features that would be nice to incorporate:
 * Simpler templating framework. Is handlebars the best approach? What else is out there for simple HTML / data binding?
